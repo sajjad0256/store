@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class Constance {
+  static String titleAppbar = 'رد کردن';
   static String titleOne = 'گیاهان را بهتر از قبل درک کنیم';
   static String titleTwo = 'با گیاهان جدید آشنا شو';
   static String titleThree = 'با یک گل بهار نمیش ود،گل بکارید';
@@ -13,4 +14,6 @@ class Constance {
   static Color myGreen = const Color(0xff102009);
   static Color myGrey = const Color(0xff8b9192);
   static Color myGreenLight = const Color(0xff325a20);
+  static Color myWhite = const Color.fromARGB(255, 255, 255, 255);
+  static Color myBlack = Color.fromARGB(255, 20, 20, 20);
 }
