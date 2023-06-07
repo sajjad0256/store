@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store/screen/root.dart';
 
 import '../const/constanse.dart';
 
@@ -54,6 +55,13 @@ class _MySplashScreenState extends State<MySplashScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 20, right: 20),
             child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MyRoot(),
+                  ),
+                );
+              },
               child: Text(
                 Constance.titleAppbar,
                 style: TextStyle(
@@ -126,6 +134,13 @@ class _MySplashScreenState extends State<MySplashScreen> {
                           _pageController.nextPage(
                               duration: const Duration(microseconds: 300),
                               curve: Curves.ease);
+                          if (currentIndex == 2) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const MyRoot(),
+                              ),
+                            );
+                          }
                         },
                       );
                     },

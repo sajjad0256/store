@@ -12,6 +12,7 @@ class Constance {
   static String descriptionThree =
       'هرگلی نیاز داشته باشید در این اپلیکیشن پیدا می کنید';
   static Color myGreen = const Color.fromARGB(255, 48, 92, 30);
+  static Color myGreenLight = const Color.fromARGB(255, 4, 80, 27);
   static Color myGrey = const Color(0xff8b9192);
   static Color myGreyLight = const Color.fromARGB(255, 173, 175, 172);
   static Color myWhite = const Color.fromARGB(255, 255, 255, 255);
@@ -19,4 +20,6 @@ class Constance {
   static Color myBlack = const Color.fromARGB(255, 20, 20, 20);
   static Color myBlue = const Color.fromARGB(255, 43, 77, 248);
   static double sizeTitleAppbar = 22;
+  static double sizeTitle = 28;
+  static double sizeIconAppbar = 35;
 }

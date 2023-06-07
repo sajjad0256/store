@@ -55,6 +55,8 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
+  uses-material-design: true
+
   fonts:
     - family: BTitrBd
       fonts:
@@ -69,6 +71,8 @@ flutter:
 
   assets:
     - assets/images/
+
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
