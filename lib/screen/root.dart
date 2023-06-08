@@ -59,9 +59,9 @@ class _MyRootState extends State<MyRoot> {
               Text(
                 appbarTitle[bottonIndex],
                 style: TextStyle(
-                  color: Constance.myGrey,
-                  fontSize: Constance.sizeTitle,
-                ),
+                    color: Constance.myGrey,
+                    fontSize: Constance.sizeTitle,
+                    fontFamily: 'Lalezar'),
               ),
             ],
           ),
