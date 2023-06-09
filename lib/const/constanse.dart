@@ -3,6 +3,7 @@ import 'dart:ui';
 class Constance {
   static String search = 'جستجو ....';
   static String titleAppbar = 'رد کردن';
+  static String titleHome = 'گیاهان جدید';
   static String titleOne = 'گیاهان را بهتر از قبل درک کنیم';
   static String titleTwo = 'با گیاهان جدید آشنا شو';
   static String titleThree = 'با یک گل بهار نمیشود،گل بکارید';
