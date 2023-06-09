@@ -13,6 +13,11 @@ class MyDetails extends StatefulWidget {
 
 class _MyDetailsState extends State<MyDetails> {
   List<Plant> myPlants = Plant.plantList;
+
+  bool toggleIsfavorite(bool isFavorite) {
+    return !isFavorite;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -56,11 +61,22 @@ class _MyDetailsState extends State<MyDetails> {
                 width: 40,
                 height: 40,
                 child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Constance.myGreenLightTwo,
-                  ),
+                  onPressed: () {
+                    setState(() {
+                      bool isFav = toggleIsfavorite(
+                          myPlants[widget.plantId].isFavorated);
+                      isFav = myPlants[widget.plantId].isFavorated;
+                    });
+                  },
+                  icon: myPlants[widget.plantId].isFavorated
+                      ? Icon(
+                          Icons.favorite,
+                          color: Constance.myGreenLightTwo,
+                        )
+                      : Icon(
+                          Icons.favorite_outline,
+                          color: Constance.myGreenLightTwo,
+                        ),
                 ),
               ),
             ),
