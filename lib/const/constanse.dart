@@ -1,6 +1,10 @@
 import 'dart:ui';
 
 class Constance {
+  static String addToCard = ' افزودن به سبد خرید';
+  static String sizePlant = 'اندازه گیاه';
+  static String humidity = 'رطوبت هوا';
+  static String temperature = 'دمای نگهداری';
   static String search = 'جستجو ....';
   static String titleAppbar = 'رد کردن';
   static String titleHome = 'گیاهان جدید';
@@ -20,8 +24,10 @@ class Constance {
   static Color myGreyLight = const Color.fromARGB(255, 173, 175, 172);
   static Color myGreyLightTwo = const Color.fromARGB(255, 212, 222, 207);
   static Color myWhite = const Color.fromARGB(255, 255, 255, 255);
+  static Color myWhiteTwo = const Color.fromARGB(255, 235, 229, 229);
   static Color myPrimary = const Color.fromARGB(255, 79, 92, 111);
   static Color myBlack = const Color.fromARGB(255, 20, 20, 20);
+  static Color myBlackLight = const Color.fromARGB(255, 79, 78, 78);
   static Color myBlue = const Color.fromARGB(255, 43, 77, 248);
   static double sizeTitleAppbar = 22;
   static double sizeTitle = 28;
