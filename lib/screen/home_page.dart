@@ -67,10 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ),
-                        const Positioned(
-                          left: 20,
-                          child: Icon(Icons.mic),
-                        ),
+                        const Icon(Icons.mic),
                       ],
                     ),
                   ),

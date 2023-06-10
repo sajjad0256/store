@@ -62,11 +62,7 @@ class _MyDetailsState extends State<MyDetails> {
                 height: 40,
                 child: IconButton(
                   onPressed: () {
-                    setState(() {
-                      bool isFav = toggleIsfavorite(
-                          myPlants[widget.plantId].isFavorated);
-                      isFav = myPlants[widget.plantId].isFavorated;
-                    });
+                    setState(() {});
                   },
                   icon: myPlants[widget.plantId].isFavorated
                       ? Icon(

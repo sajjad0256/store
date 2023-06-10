@@ -1,11 +1,8 @@
-// NABEGHEHA.COM
-
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../const/constanse.dart';
+import 'qr_overlay.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});
@@ -29,10 +26,12 @@ class _CameraPageState extends State<CameraPage> {
               if (barcode.rawValue == null) {
                 debugPrint('Failed to scan Barcode');
               } else {
-                final String code = barcode.rawValue!;
-                debugPrint('Barcode found! $code');
+                debugPrint('Barcode found! ');
               }
             },
+          ),
+          QRScannerOverlay(
+            overlayColour: Colors.black.withOpacity(0.5),
           ),
           // AppBar
           Positioned(
