@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../const/constanse.dart';
+
 class MyScan extends StatefulWidget {
   const MyScan({super.key});
 
@@ -10,9 +12,77 @@ class MyScan extends StatefulWidget {
 class _MyScanState extends State<MyScan> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Constance.myWhite,
+      appBar: AppBar(
+        elevation: 0.0,
+        automaticallyImplyLeading: false,
+        backgroundColor: Constance.myWhite,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Constance.myWhiteTwo,
+                ),
+                width: 40,
+                height: 40,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  icon: Icon(
+                    Icons.close,
+                    color: Constance.myGreenLightTwo,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Constance.myWhiteTwo,
+                ),
+                width: 40,
+                height: 40,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.share,
+                    color: Constance.myGreen,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Center(
-        child: Text('Scan page'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 150,
+              height: 150,
+              child: Image.asset('assets/images/code-scan.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 35),
+              child: Text(
+                Constance.scanClick,
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Constance.myGreen,
+                    fontFamily: 'BTitrBd'),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

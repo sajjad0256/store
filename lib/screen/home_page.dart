@@ -255,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              //list News
+              //list News Plants
               SizedBox(
                 width: size.width,
                 height: size.height * 0.5,

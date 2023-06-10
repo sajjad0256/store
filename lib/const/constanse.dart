@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class Constance {
+  static String scanClick = 'برای اسکن گیاهان کلیک کنید';
   static String addToCard = ' افزودن به سبد خرید';
   static String sizePlant = 'اندازه گیاه';
   static String humidity = 'رطوبت هوا';
