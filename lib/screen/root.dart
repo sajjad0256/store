@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:store/const/constanse.dart';
+import 'package:store/model/plant.dart';
 import 'package:store/screen/card_page.dart';
 import 'package:store/screen/favorite_page.dart';
 import 'package:store/screen/home_page.dart';
@@ -17,12 +18,21 @@ class MyRoot extends StatefulWidget {
 
 class _MyRootState extends State<MyRoot> {
   int bottonIndex = 0;
-  List<Widget> pages = [
-    const MyHomePage(),
-    const MyFavorite(),
-    const MyCard(),
-    const MyProfile(),
-  ];
+
+  List<Plant> favorited = [];
+  List<Plant> cardShoping = [];
+  List<Widget> pages() {
+    return [
+      const MyHomePage(),
+      MyFavorite(
+        favorited: favorited,
+      ),
+      MyCard(
+        addCard: cardShoping,
+      ),
+      const MyProfile(),
+    ];
+  }
 
   List<IconData> listIcons = [
     Icons.home,
@@ -94,13 +104,18 @@ class _MyRootState extends State<MyRoot> {
           setState(
             () {
               bottonIndex = index;
+              List<Plant> favoritedPlants = Plant.getFavoritedPlants();
+              List<Plant> addCardPlants = Plant.addedToCartPlants();
+
+              favorited = favoritedPlants.toSet().toList();
+              cardShoping = addCardPlants.toSet().toList();
             },
           );
         },
       ),
       body: IndexedStack(
         index: bottonIndex,
-        children: pages,
+        children: pages(),
       ),
     );
   }

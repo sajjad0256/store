@@ -14,7 +14,11 @@ class MyDetails extends StatefulWidget {
 class _MyDetailsState extends State<MyDetails> {
   List<Plant> myPlants = Plant.plantList;
 
-  bool toggleIsfavorite(bool isFavorite) {
+  bool toggleSelectedItem(bool isSelected) {
+    return !isSelected;
+  }
+
+  bool togglefavoriteItem(bool isFavorite) {
     return !isFavorite;
   }
 
@@ -62,7 +66,11 @@ class _MyDetailsState extends State<MyDetails> {
                 height: 40,
                 child: IconButton(
                   onPressed: () {
-                    setState(() {});
+                    setState(() {
+                      bool isFavoreted = togglefavoriteItem(
+                          myPlants[widget.plantId].isFavorated);
+                      myPlants[widget.plantId].isFavorated = isFavoreted;
+                    });
                   },
                   icon: myPlants[widget.plantId].isFavorated
                       ? Icon(
@@ -292,6 +300,14 @@ class _MyDetailsState extends State<MyDetails> {
                           height: 50,
                           width: size.width * 0.7,
                           child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                bool isSelect = toggleSelectedItem(
+                                    myPlants[widget.plantId].isSelected);
+                                myPlants[widget.plantId].isSelected = isSelect;
+                                Navigator.of(context).pop();
+                              });
+                            },
                             child: Center(
                               child: Text(
                                 Constance.addToCard,

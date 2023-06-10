@@ -116,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: size.width,
                 height: size.height * 0.3,
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   reverse: true,
                   padding: const EdgeInsets.only(right: 5, left: 5),
                   scrollDirection: Axis.horizontal,

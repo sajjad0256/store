@@ -42,7 +42,8 @@ class Plant {
       temperature: '23 - 34',
       imageURL: 'assets/images/plant-one.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -56,7 +57,8 @@ class Plant {
       temperature: '19 - 22',
       imageURL: 'assets/images/plant-two.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -70,7 +72,8 @@ class Plant {
       temperature: '22 - 25',
       imageURL: 'assets/images/plant-three.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -84,7 +87,8 @@ class Plant {
       temperature: '23 - 28',
       imageURL: 'assets/images/plant-one.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -98,7 +102,8 @@ class Plant {
       temperature: '12 - 16',
       imageURL: 'assets/images/plant-four.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -112,7 +117,8 @@ class Plant {
       temperature: '15 - 18',
       imageURL: 'assets/images/plant-five.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -126,7 +132,8 @@ class Plant {
       temperature: '23 - 26',
       imageURL: 'assets/images/plant-six.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -140,7 +147,8 @@ class Plant {
       temperature: '21 - 24',
       imageURL: 'assets/images/plant-seven.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
     Plant(
@@ -154,7 +162,8 @@ class Plant {
       temperature: '21 - 25',
       imageURL: 'assets/images/plant-eight.png',
       isFavorated: false,
-      decription: 'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+      decription:
+          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
       isSelected: false,
     ),
   ];
@@ -168,6 +177,24 @@ class Plant {
   //Get the cart items
   static List<Plant> addedToCartPlants() {
     List<Plant> selectedPlants = Plant.plantList;
-    return selectedPlants.where((element) => element.isSelected == true).toList();
+    return selectedPlants
+        .where((element) => element.isSelected == true)
+        .toList();
+  }
+
+  //get all Price
+  static List<Plant> getAllPrice(int? price) {
+    List<Plant> listPrice = Plant.plantList;
+    return listPrice.where((element) => element.price == price).toList();
   }
 }
+
+
+//  List<Plant> price = Plant.plantList;
+//     var sum = 0;
+//     final listMutu =
+//         price.map((e) => int.tryParse(e.price.toString()) ?? 0).toList();
+//     for (var i = 0; i < listMutu.length; i++) {
+//       sum += listMutu[i];
+//     }
+//     return sum;
