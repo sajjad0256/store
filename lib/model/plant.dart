@@ -182,6 +182,38 @@ class Plant {
         .toList();
   }
 
+  //Get Suggestion Flower
+  static List<Plant> getSuggestionFlower() {
+    List<Plant> selectedPlants = Plant.plantList;
+    return selectedPlants
+        .where((element) => element.category == 'پیشنهادی')
+        .toList();
+  }
+
+  //Get Apartemant Flower
+  static List<Plant> getApartemantFlower() {
+    List<Plant> selectedPlants = Plant.plantList;
+    return selectedPlants
+        .where((element) => element.category == 'آپارتمانی')
+        .toList();
+  }
+
+  //Get job Flower
+  static List<Plant> getJobFlower() {
+    List<Plant> selectedPlants = Plant.plantList;
+    return selectedPlants
+        .where((element) => element.category == 'محل‌کار')
+        .toList();
+  }
+
+  //Get garden Flower
+  static List<Plant> getGardenFlower() {
+    List<Plant> selectedPlants = Plant.plantList;
+    return selectedPlants
+        .where((element) => element.category == 'باغچه‌ایی')
+        .toList();
+  }
+
   //get all Price
   static List<Plant> getAllPrice(int? price) {
     List<Plant> listPrice = Plant.plantList;

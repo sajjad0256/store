@@ -27,14 +27,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   final List<Plant> myPlantList = Plant.plantList;
-
-  void suggestion(int index) {
-    return myPlantList.forEach(
-      (element) {
-        element.category == 'پیشنهادی';
-      },
-    );
-  }
+  final List<Plant> myPlantListSuggestion = Plant.getSuggestionFlower();
+  final List<Plant> myPlantListApartemant = Plant.getApartemantFlower();
+  final List<Plant> myPlantListJob = Plant.getJobFlower();
+  final List<Plant> myPlantListGarden = Plant.getGardenFlower();
 
   @override
   Widget build(BuildContext context) {
@@ -263,19 +259,603 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     )
                   : selectedItem == 1
-                      ? Container(
+                      ? SizedBox(
                           width: size.width,
-                          height: 150,
+                          height: size.height * 0.3,
                           child: ListView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            reverse: true,
+                            padding: const EdgeInsets.only(right: 5, left: 5),
                             scrollDirection: Axis.horizontal,
-                            itemCount: myPlantList.length,
-                            itemBuilder: (BuildContext context, int index) {},
+                            itemCount: myPlantListSuggestion.length,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    PageTransition(
+                                        child: MyDetails(
+                                          plantId: myPlantListSuggestion[index]
+                                              .plantId,
+                                        ),
+                                        type: PageTransitionType.rightToLeft),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Constance.myGreenLightTwo,
+                                    ),
+                                    width: 200,
+                                    child: Stack(
+                                      children: [
+                                        //fav
+                                        Positioned(
+                                          right: 20,
+                                          top: 15,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              color: Constance.myWhite,
+                                            ),
+                                            height: 40,
+                                            width: 40,
+                                            child: IconButton(
+                                              onPressed: () {
+                                                setState(
+                                                  () {
+                                                    bool isFavorite =
+                                                        toggleIsFavorite(
+                                                            myPlantList[index]
+                                                                .isFavorated);
+                                                    myPlantList[index]
+                                                            .isFavorated =
+                                                        isFavorite;
+                                                  },
+                                                );
+                                              },
+                                              icon: myPlantList[index]
+                                                          .isFavorated ==
+                                                      true
+                                                  ? Icon(
+                                                      Icons.favorite,
+                                                      color: Constance.myGreen,
+                                                    )
+                                                  : Icon(
+                                                      Icons
+                                                          .favorite_border_outlined,
+                                                      color: Constance.myGreen,
+                                                    ),
+                                            ),
+                                          ),
+                                        ),
+                                        //flower
+                                        Positioned(
+                                          right: 25,
+                                          bottom: 20,
+                                          child: Text(
+                                            myPlantListSuggestion[index]
+                                                .plantName,
+                                            style: TextStyle(
+                                              color: Constance.myWhite,
+                                              fontFamily: 'BTitrBd',
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                        //category
+                                        Positioned(
+                                          right: 25,
+                                          bottom: 50,
+                                          child: Text(
+                                            myPlantListSuggestion[index]
+                                                .category,
+                                            style: TextStyle(
+                                              color: Constance.myGreyLight,
+                                              fontFamily: 'Lalezar',
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                        ),
+                                        //price
+                                        Positioned(
+                                          bottom: 20,
+                                          left: 15,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              color: Constance.myWhite,
+                                            ),
+                                            height: 30,
+                                            width: 50,
+                                            child: Center(
+                                              child: Text(
+                                                  '\$ ${myPlantListSuggestion[index].price.toString()}'),
+                                            ),
+                                          ),
+                                        ),
+                                        //pic
+                                        Positioned(
+                                          top: 45,
+                                          left: 38,
+                                          child: SizedBox(
+                                            width: 120,
+                                            height: 140,
+                                            child: Image.asset(
+                                              myPlantListSuggestion[index]
+                                                  .imageURL,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         )
-                      : Container(),
-              selectedItem == 2 ? Container() : Container(),
-              selectedItem == 3 ? Container() : Container(),
-              selectedItem == 4 ? Container() : Container(),
+                      : selectedItem == 2
+                          ? SizedBox(
+                              width: size.width,
+                              height: size.height * 0.3,
+                              child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                reverse: true,
+                                padding:
+                                    const EdgeInsets.only(right: 5, left: 5),
+                                scrollDirection: Axis.horizontal,
+                                itemCount: myPlantListApartemant.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        PageTransition(
+                                            child: MyDetails(
+                                              plantId:
+                                                  myPlantListApartemant[index]
+                                                      .plantId,
+                                            ),
+                                            type:
+                                                PageTransitionType.rightToLeft),
+                                      );
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Constance.myGreenLightTwo,
+                                        ),
+                                        width: 200,
+                                        child: Stack(
+                                          children: [
+                                            //fav
+                                            Positioned(
+                                              right: 20,
+                                              top: 15,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  color: Constance.myWhite,
+                                                ),
+                                                height: 40,
+                                                width: 40,
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    setState(
+                                                      () {
+                                                        bool isFavorite =
+                                                            toggleIsFavorite(
+                                                                myPlantList[
+                                                                        index]
+                                                                    .isFavorated);
+                                                        myPlantList[index]
+                                                                .isFavorated =
+                                                            isFavorite;
+                                                      },
+                                                    );
+                                                  },
+                                                  icon: myPlantList[index]
+                                                              .isFavorated ==
+                                                          true
+                                                      ? Icon(
+                                                          Icons.favorite,
+                                                          color:
+                                                              Constance.myGreen,
+                                                        )
+                                                      : Icon(
+                                                          Icons
+                                                              .favorite_border_outlined,
+                                                          color:
+                                                              Constance.myGreen,
+                                                        ),
+                                                ),
+                                              ),
+                                            ),
+                                            //flower
+                                            Positioned(
+                                              right: 25,
+                                              bottom: 20,
+                                              child: Text(
+                                                myPlantListApartemant[index]
+                                                    .plantName,
+                                                style: TextStyle(
+                                                  color: Constance.myWhite,
+                                                  fontFamily: 'BTitrBd',
+                                                  fontSize: 20,
+                                                ),
+                                              ),
+                                            ),
+                                            //category
+                                            Positioned(
+                                              right: 25,
+                                              bottom: 50,
+                                              child: Text(
+                                                myPlantListApartemant[index]
+                                                    .category,
+                                                style: TextStyle(
+                                                  color: Constance.myGreyLight,
+                                                  fontFamily: 'Lalezar',
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                            //price
+                                            Positioned(
+                                              bottom: 20,
+                                              left: 15,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  color: Constance.myWhite,
+                                                ),
+                                                height: 30,
+                                                width: 50,
+                                                child: Center(
+                                                  child: Text(
+                                                      '\$ ${myPlantListApartemant[index].price.toString()}'),
+                                                ),
+                                              ),
+                                            ),
+                                            //pic
+                                            Positioned(
+                                              top: 45,
+                                              left: 38,
+                                              child: SizedBox(
+                                                width: 120,
+                                                height: 140,
+                                                child: Image.asset(
+                                                  myPlantListApartemant[index]
+                                                      .imageURL,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          : selectedItem == 3
+                              ? SizedBox(
+                                  width: size.width,
+                                  height: size.height * 0.3,
+                                  child: ListView.builder(
+                                    physics: const BouncingScrollPhysics(),
+                                    reverse: true,
+                                    padding: const EdgeInsets.only(
+                                        right: 5, left: 5),
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: myPlantListJob.length,
+                                    itemBuilder: (context, index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                            PageTransition(
+                                                child: MyDetails(
+                                                  plantId: myPlantListJob[index]
+                                                      .plantId,
+                                                ),
+                                                type: PageTransitionType
+                                                    .rightToLeft),
+                                          );
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              color: Constance.myGreenLightTwo,
+                                            ),
+                                            width: 200,
+                                            child: Stack(
+                                              children: [
+                                                //fav
+                                                Positioned(
+                                                  right: 20,
+                                                  top: 15,
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30),
+                                                      color: Constance.myWhite,
+                                                    ),
+                                                    height: 40,
+                                                    width: 40,
+                                                    child: IconButton(
+                                                      onPressed: () {
+                                                        setState(
+                                                          () {
+                                                            bool isFavorite =
+                                                                toggleIsFavorite(
+                                                                    myPlantList[
+                                                                            index]
+                                                                        .isFavorated);
+                                                            myPlantList[index]
+                                                                    .isFavorated =
+                                                                isFavorite;
+                                                          },
+                                                        );
+                                                      },
+                                                      icon: myPlantList[index]
+                                                                  .isFavorated ==
+                                                              true
+                                                          ? Icon(
+                                                              Icons.favorite,
+                                                              color: Constance
+                                                                  .myGreen,
+                                                            )
+                                                          : Icon(
+                                                              Icons
+                                                                  .favorite_border_outlined,
+                                                              color: Constance
+                                                                  .myGreen,
+                                                            ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                //flower
+                                                Positioned(
+                                                  right: 25,
+                                                  bottom: 20,
+                                                  child: Text(
+                                                    myPlantListJob[index]
+                                                        .plantName,
+                                                    style: TextStyle(
+                                                      color: Constance.myWhite,
+                                                      fontFamily: 'BTitrBd',
+                                                      fontSize: 20,
+                                                    ),
+                                                  ),
+                                                ),
+                                                //category
+                                                Positioned(
+                                                  right: 25,
+                                                  bottom: 50,
+                                                  child: Text(
+                                                    myPlantListJob[index]
+                                                        .category,
+                                                    style: TextStyle(
+                                                      color:
+                                                          Constance.myGreyLight,
+                                                      fontFamily: 'Lalezar',
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                ),
+                                                //price
+                                                Positioned(
+                                                  bottom: 20,
+                                                  left: 15,
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30),
+                                                      color: Constance.myWhite,
+                                                    ),
+                                                    height: 30,
+                                                    width: 50,
+                                                    child: Center(
+                                                      child: Text(
+                                                          '\$ ${myPlantListJob[index].price.toString()}'),
+                                                    ),
+                                                  ),
+                                                ),
+                                                //pic
+                                                Positioned(
+                                                  top: 45,
+                                                  left: 38,
+                                                  child: SizedBox(
+                                                    width: 120,
+                                                    height: 140,
+                                                    child: Image.asset(
+                                                      myPlantListJob[index]
+                                                          .imageURL,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                )
+                              : selectedItem == 4
+                                  ? SizedBox(
+                                      width: size.width,
+                                      height: size.height * 0.3,
+                                      child: ListView.builder(
+                                        physics: const BouncingScrollPhysics(),
+                                        reverse: true,
+                                        padding: const EdgeInsets.only(
+                                            right: 5, left: 5),
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: myPlantListGarden.length,
+                                        itemBuilder: (context, index) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              Navigator.of(context).push(
+                                                PageTransition(
+                                                    child: MyDetails(
+                                                      plantId:
+                                                          myPlantListGarden[
+                                                                  index]
+                                                              .plantId,
+                                                    ),
+                                                    type: PageTransitionType
+                                                        .rightToLeft),
+                                              );
+                                            },
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                  color:
+                                                      Constance.myGreenLightTwo,
+                                                ),
+                                                width: 200,
+                                                child: Stack(
+                                                  children: [
+                                                    //fav
+                                                    Positioned(
+                                                      right: 20,
+                                                      top: 15,
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
+                                                          color:
+                                                              Constance.myWhite,
+                                                        ),
+                                                        height: 40,
+                                                        width: 40,
+                                                        child: IconButton(
+                                                          onPressed: () {
+                                                            setState(
+                                                              () {
+                                                                bool
+                                                                    isFavorite =
+                                                                    toggleIsFavorite(
+                                                                        myPlantList[index]
+                                                                            .isFavorated);
+                                                                myPlantList[index]
+                                                                        .isFavorated =
+                                                                    isFavorite;
+                                                              },
+                                                            );
+                                                          },
+                                                          icon: myPlantList[
+                                                                          index]
+                                                                      .isFavorated ==
+                                                                  true
+                                                              ? Icon(
+                                                                  Icons
+                                                                      .favorite,
+                                                                  color: Constance
+                                                                      .myGreen,
+                                                                )
+                                                              : Icon(
+                                                                  Icons
+                                                                      .favorite_border_outlined,
+                                                                  color: Constance
+                                                                      .myGreen,
+                                                                ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    //flower
+                                                    Positioned(
+                                                      right: 25,
+                                                      bottom: 20,
+                                                      child: Text(
+                                                        myPlantListGarden[index]
+                                                            .plantName,
+                                                        style: TextStyle(
+                                                          color:
+                                                              Constance.myWhite,
+                                                          fontFamily: 'BTitrBd',
+                                                          fontSize: 20,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    //category
+                                                    Positioned(
+                                                      right: 25,
+                                                      bottom: 50,
+                                                      child: Text(
+                                                        myPlantListGarden[index]
+                                                            .category,
+                                                        style: TextStyle(
+                                                          color: Constance
+                                                              .myGreyLight,
+                                                          fontFamily: 'Lalezar',
+                                                          fontSize: 18,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    //price
+                                                    Positioned(
+                                                      bottom: 20,
+                                                      left: 15,
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
+                                                          color:
+                                                              Constance.myWhite,
+                                                        ),
+                                                        height: 30,
+                                                        width: 50,
+                                                        child: Center(
+                                                          child: Text(
+                                                              '\$ ${myPlantListGarden[index].price.toString()}'),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    //pic
+                                                    Positioned(
+                                                      top: 45,
+                                                      left: 38,
+                                                      child: SizedBox(
+                                                        width: 120,
+                                                        height: 140,
+                                                        child: Image.asset(
+                                                          myPlantListGarden[
+                                                                  index]
+                                                              .imageURL,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    )
+                                  : Container(),
               //title Flower
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
