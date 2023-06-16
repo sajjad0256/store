@@ -188,13 +188,3 @@ class Plant {
     return listPrice.where((element) => element.price == price).toList();
   }
 }
-
-
-//  List<Plant> price = Plant.plantList;
-//     var sum = 0;
-//     final listMutu =
-//         price.map((e) => int.tryParse(e.price.toString()) ?? 0).toList();
-//     for (var i = 0; i < listMutu.length; i++) {
-//       sum += listMutu[i];
-//     }
-//     return sum;
